@@ -1,89 +1,22 @@
-# Ph.D. Thesis Template 
-## Nangyang Technological University 
+## Ph.D. Thesis template for SPMS, NTU
 
-This version has been verified by NTU
+This repository is a PhD thesis LaTex template for School of Physical and Mathematical Sciences (SPMS), Nanyang Technological University (NTU). It is a fork of NTU Ph.D. Thesis template originally from [Dr. Chen Wang](https://github.com/wang-chen/thesis_template_ntu). I modified it to match the template for SPMS students.
 
-Author: [Chen Wang](https://wang-chen.github.io)
+## Notes
 
-## Usage:
+Thesis title, author name and supervisor name can be changed in Thesis.cls file.
 
- You can see direct example in [Overleaf Project](https://www.overleaf.com/read/zbqyfqxwdmss) (View Only).
-
-#### Main thesis
-    Please change your name, title, and school in the file of Thesis.cls
-    
-#### Signature
-   For digital signature, make your own and put it in the folder "Styles" to replace the original one.
- 
-#### Example:
-   
-   You may read my thesis on [Dr-NTU](https://hdl.handle.net/10356/105527)
-   
-#### Hard-cover binding (Not recommend do this by yourself)
-    
-    Midify the hardbound-cover.tex
-   You may not need to do this by yourself if you follow the [Format](https://www.ntu.edu.sg/sasd/oas/ge/Documents/FormatofThesis_Sample_Oct2017.pdf). Just ask the stuff to follow the NTU 'standard'. 
-   if your need hard-binding in 7 days, just send your thesis to [ultrasupplies](https://www.ultrasupplies.com.sg/solutions/book-binding/hard-cover-binding), and confirm with them.   
-
-
-## What's New
-    
-#### Updates (declaration statements), Mar. 2019:
-
-   This version has been modified according to the [Format of final thesis](https://www.ntu.edu.sg/research/theses-dissertations), all submissions received on or after 1 Jan 2019 must include the declaration statements.
-   
-    i.   Title Page	
-    ii.  Statement of Originality .      }
-    iii. Supervisor Declaration Statement} Research Integrity - Theses / Dissertations
-    iv.  Authorship Attribution Statement}	
-    v.   Acknowledgements	
-    vi.  Table of Contents
-    vii. Summary
-
-#### Updates (Title Page), Aug. 2018:
-
-   We provide two styles for the title page, use "\maketitleforreview" or "\maketitle", in the file of "mythesis.tex", to choose your prefered one. Normally, the University prefers "\maketitleforreview".
-        
-        %\maketitle
-        \maketitleforreview
+## Title Page Example
+Title page:
+![The title page example](https://github.com/EricJ928/NTU_SPMS_thesis_template/blob/master/Styles/title_page.png)
 
 Plain title page:
-![The title page example](https://github.com/wang-chen/thesis_template_ntu/blob/master/Styles/title-page-plain.png)
+![The plain title page example](https://github.com/EricJ928/NTU_SPMS_thesis_template/blob/master/Styles/title_page_plain.png)
 
-Beautiful title page:
-![The title page example](https://github.com/wang-chen/thesis_template_ntu/blob/master/Styles/title-page.png)
+## Acknowledgements
 
+Huge thanks to Dr. Chen Wang and other contributors for making the original version of the thesis template. The original version uses template from EEE, please head to [https://github.com/wang-chen/thesis_template_ntu](https://github.com/wang-chen/thesis_template_ntu) if you need their template.
 
-#### Updates (Thesis Parts), Jul. 2021:
+## Disclaimer
 
-   Add examples to split the thesis into several parts. 
-   This should be useful when there are many chapters. 
-   Use it between chapters and see examples in "mythesis.tex".
-
-    \input{./Chapters/Chapter1}
-
-    \part{Part Name: Use it when there are many chapters (Part I)}
-    \input{./Chapters/Chapter2}
-    \input{./Chapters/Chapter3}
-
-    \part{Again for Second Part}
-    \input{./Chapters/Chapter4}
-    \input{./Chapters/Chapter5}
-
-
-## Other Contributors
-    
-   [Jinming Xu](https://jinmingxu.github.io)
-
-   [Chongtian Huang](https://nerdtomars.github.io/)
-   
-## Citation
-
-   You may cite [my thesis or papers](https://scholar.google.com/citations?user=vZfmKl4AAAAJ), if you find this template is useful.
-
-## Sponsor
-
-   Want to support me? You can go to my official [GitHub Sponsor](https://github.com/sponsors/wang-chen) page!
-
-   Alternatively, you can use [PayPal](https://www.paypal.com/paypalme/DrChenWang) for direct one time donation!
-   
+Please always check with the official template from the school's administration. I am not responsible for any mismatch, delay, or inconvenience that happens to your thesis and data while using this template.
