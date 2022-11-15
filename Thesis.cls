@@ -126,7 +126,7 @@
 \newcommand{\pref}[1]{Part~\ref{#1}}
 \newcommand{\fref}[1]{Figure~\ref{#1}}
 \newcommand{\tref}[1]{Table~\ref{#1}}
-\newcommand{\eref}[1]{Equation~(\ref{#1})}
+\newcommand{\eref}[1]{Equation~\ref{#1}}
 \newcommand{\exref}[1]{Example~\ref{#1}}
 \newcommand{\cref}[1]{Chapter~\ref{#1}}
 \newcommand{\sref}[1]{Section~\ref{#1}}
@@ -171,7 +171,7 @@
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
    bookmarksopenlevel=1,bookmarksnumbered=true,hypertexnames=true,
    colorlinks,linkcolor={blue},citecolor={blue},urlcolor={black},pdfauthor={Chen Wang},pdftitle={Kernel Learning for Visual Perception},
-   pdfstartview={FitV},unicode,breaklinks=true,plainpages=false,backref=page]{hyperref}
+   pdfstartview={FitV},unicode,breaklinks=true,plainpages=false]{hyperref}
 
 \pdfstringdefDisableCommands{
    \let\\\space
@@ -193,6 +193,12 @@
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 
+
+% \renewcommand*{\thechapter}{Chapter~\arabic{chapter}}
+% \renewcommand*{\thefigure}{S\arabic{figure}}
+% \renewcommand*{\thesection}{\alph{section}}
+% \renewcommand*{\theequation}{S\arabic{equation}}
+
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
 %	Fill in the lines below to update the thesis template
@@ -203,15 +209,15 @@
 
 %Your thesis title - this is used in the title and abstract
 %-------------------------------------------------
-\thesistitle{\href{https://github.com/wang-chen/thesis_template_ntu}{The Greatest Thesis in the World}} %
+\thesistitle{The Greatest Thesis in the World} %
 %-------------------------------------------------
-\supervisor{Prof. Einstein \textsc{XXX}} % You supervisor's name - this is used in the title page
+\supervisor{Prof. Albert Einstein} % You supervisor's name - this is used in the title page
 %-------------------------------------------------
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------
 \degree{Doctor of Philosophy} % Your degree name - this is currently used in the title page and abstract
 %-------------------------------------------------
-\authors{\href{https://wang-chen.github.io}{Author Name}} % Your name - this is used in the title page and abstract
+\authors{Author Name} % Your name - this is used in the title page and abstract
 %-------------------------------------------------
 \addresses{} % Your address - this is not currently used anywhere in the template, cite it with \addressnames if you want it
 %-------------------------------------------------
@@ -227,8 +233,8 @@
                 {UNIVERSITY NAME (IN BLOCK CAPITALS)}} % Your university's name in capitals - this is currently used in the abstract page
                 {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
 %-------------------------------------------------
-\department{\texorpdfstring{\href{http://www.eee.ntu.edu.sg} % Your department's URL
-                {School of Electrical \& Electronic Engineering}} % Your department's name - used in the title page and abstract
+\department{\texorpdfstring{\href{https://www.ntu.edu.sg/spms/} % Your department's URL
+                {SCHOOL OF PHYSICAL AND MATHEMATICAL SCIENCES}} % Your department's name - used in the title page and abstract
                 {Department or School Name}}
 %-------------------------------------------------
 \DEPARTMENT{\texorpdfstring{\href{Department or School Web Site URL Here (include http://)} % Your department's URL
@@ -270,12 +276,12 @@
   \begin{center}
   \setstretch{2}
   \vfill
-  \textbf{\LARGE \newline \rule{\linewidth}{2pt}\\\vspace{-7pt}\ttitle\\\rule{\linewidth}{2pt}}\\% Thesis title
+  \href{http://www.ntu.edu.sg}{\includegraphics[width=400pt]{Styles/ntu_logo}}\\%[2cm]
+  \vfill
+  \textbf{\Large \vspace{-7pt} \MakeUppercase{\ttitle}}\\% Thesis title
   % \setstretch{1.5}
   \vfill
-  \href{http://www.ntu.edu.sg}{\includegraphics[width=230pt]{Styles/ntu_logo}}\\%[2cm]
-  \vfill
-  \textbf{\Large \authornames}\\%[1.2cm]
+  \textbf{\large \MakeUppercase{\authornames}}\\%[1.2cm]
   {\large \deptname}\\%[1.2cm] % University name
   \vfill
   \setstretch{1.2}
@@ -297,11 +303,11 @@
 		\begin{center}
 			\setstretch{2}
 			\vfill
-			\textbf{\LARGE \newline \ttitle}\\% Thesis title
+			\textbf{\LARGE \newline \MakeUppercase{\ttitle}}\\% Thesis title
 			\vfill
-			\textbf{\Large \textbf{\authornames}}\\[1cm]
+			\textbf{\Large \textbf{\MakeUppercase{\authornames}}}\\[1cm]
 			\vfill
-			{\large \textbf{\deptname}}\\%[1.2cm] % University name
+			{\large {\deptname}}\\%[1.2cm] % University name
 			[1.2cm]
 			\setstretch{1.2}
 			\large A thesis submitted to the Nanyang Technological University \\ in partial fulfillment of the requirements for the degree of\\ \degreename\\[1cm] % University requirement text
@@ -349,6 +355,9 @@
 \newcommand\addtotoc[1]{
 \refstepcounter{dummy}
 \addcontentsline{toc}{chapter}{#1}}
+
+\renewcommand{\contentsname}{Table of Contents}
+
 \renewcommand\tableofcontents{
 \btypeout{Table of Contents}
 \begin{spacing}{1}{
@@ -360,12 +369,13 @@
     \fi
     \chapter*{\contentsname
         \@mkboth{
-           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+          \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
     \@starttoc{toc}
     \if@restonecol\twocolumn\fi
-   \cleardoublepage
+  \cleardoublepage
 }\end{spacing}
 }
+
 \renewcommand\listoffigures{
 \btypeout{List of Figures}
 \addtotoc{List of Figures}
@@ -384,6 +394,7 @@
     \cleardoublepage
 }\end{spacing}
 }
+
 \renewcommand\listoftables{
 \btypeout{List of Tables}
 \addtotoc{List of Tables}
@@ -451,12 +462,12 @@
 	\btypeout{Declaration}
 	\thispagestyle{empty}
 	\begin{spacing}{2}
-		\begin{center}\Large \underline{\bf Statement of Originality}\end{center}
-		{\textnormal{\large #1}}
-		\vspace{2.5cm}
+		\begin{center}\large \textbf{Statement of Originality}\end{center}
+		{\textnormal{\normalsize #1}}
+		\vspace{7cm}
 		\begin{center}
 			\makebox[4cm]{#2}  \hfill
-			\makebox[4cm]{\includegraphics[height=0.9cm]{#3}}\\
+			\makebox[4cm]{\includegraphics[width=4cm]{#3}}\\
 		\end{center}
 		\vspace{-1.8cm}
 		\begin{center}
@@ -471,12 +482,12 @@
 	\btypeout{Declaration}
 	\thispagestyle{empty}
 	\begin{spacing}{2}
-		\begin{center}\Large \underline{\bf Supervisor Declaration Statement}\end{center}
-		{\textnormal{\large #1}}
+		\begin{center}\large \textbf{Supervisor Declaration Statement}\end{center}
+		{\textnormal{\normalsize #1}}
 		\vspace{2.5cm}
 		\begin{center}
 			\makebox[4cm]{#2}  \hfill
-			\makebox[4cm]{\includegraphics[height=0.9cm]{#3}}\\
+			\makebox[4cm]{\includegraphics[width=4cm]{#3}}\\
 		\end{center}
 		\vspace{-1.8cm}
 		\begin{center}
@@ -490,16 +501,16 @@
 \newcommand\thesisdeclareAuthorship[4]{
 	\btypeout{Declaration}
 	\thispagestyle{empty}
-	\begin{spacing}{2}
-		\begin{center}\Large \underline{\bf Authorship Attribution Statement}\end{center}
-		{\textnormal{\large #1}}
+	\begin{spacing}{1.5}
+		\begin{center}\large \textbf{Authorship Attribution Statement}\end{center}
+		{\textnormal{\normalsize #1}}
 	\end{spacing}
 	\begin{spacing}{2}
-		{\setstretch{1.0}#2}
+		{\setstretch{1.5}#2}
 		\vspace{2.5cm}
 		\begin{center}
 			\makebox[4cm]{#3}  \hfill
-			\makebox[4cm]{\includegraphics[height=0.9cm]{#4}}\\
+			\makebox[4cm]{\includegraphics[width=4cm]{#4}}\\
 		\end{center}
 		\vspace{-1.8cm}
 		\begin{center}

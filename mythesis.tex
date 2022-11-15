@@ -19,6 +19,24 @@
 %LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 %SOFTWARE.
+
+% #############################################################
+% #                                                            #
+% #  Modified by Junxiang (Eric) Jia @ WeberLab, NTU.          #
+% #  GitHub link of this repo:                                 #
+% #  https://github.com/EricJ928/NTU_SPMS_thesis_template      #
+% #                                                            #
+% #  - Modified to match the template for SPMS, NTU.           #
+% #  - Add an option that can split Bibliography               #
+% #    separately for each chapter.                            #
+% #                                                            #
+% #############################################################
+
+% Disclaimer:
+% ===========
+% Please always check with the official template from the school's administration. I am not responsible for any mismatch, delay, or inconvenience that happens to your thesis and data while using this template.
+
+
 \documentclass[12pt,a4paper]{Thesis} % Paper size, default font size and one-sided paper
 
 \graphicspath{%
@@ -43,6 +61,7 @@
 \usepackage[ruled,vlined,noresetcount]{algorithm2e}
 %\usepackage{algpseudocode}
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers'
+% \usepackage{tocbibind}
 
 \title{\ttitle} % Defines the thesis title - don't touch this
 
@@ -51,6 +70,12 @@
 \usepackage{color,soul}               % highlighting text
 \usepackage{enumerate}
 \usepackage{Styles/mydefs}
+\usepackage{tabularx}           % for table
+\renewcommand\tabularxcolumn[1]{m{#1}}      % vertical centering of table cell
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+% \newcommand{\angstrom}{\mbox{\normalfont\AA}}
 
 
 \begin{document}
@@ -74,23 +99,24 @@
 %%% Use \maketitleforreview instead of \maketitle, if you want a PLAIN TITLE PAGE
 
 \maketitle
-% \maketitleforreview
+\maketitleforreview
 
 
 % ----------------------------------------------------------------------------------------
 % 	DECLARATION PAGE
 % ----------------------------------------------------------------------------------------
 
-\thesisdeclareOriginality{I hereby certify that the work embodied in this thesis is the result of original research, is free of plagiarised materials, and has not been submitted for a higher degree to any other University or Institution.}{Aug. 2018}{Styles/signature.png}
+\thesisdeclareOriginality{I hereby certify that the work embodied in this thesis is the result of original research done by me except where otherwise stated in this thesis. The thesis work has not been submitted for a degree or professional qualification to any other university or institution. I declare that this thesis is written by myself and is free of plagiarism and of sufficient grammatical clarity to be examined. I confirm that the investigations were conducted in accord with the ethics policies and integrity standards of Nanyang Technological University and that the research data are presented honestly and without prejudice.}{Sep. 2022}{Styles/Signature_NTU.png}
 
-\thesisdeclareSupervisor{I have reviewed the content and presentation style of this thesis and declare it is free of plagiarism and of sufficient grammatical clarity to be examined.  To the best of my knowledge, the research and writing are those of the candidate except as acknowledged in the Author Attribution Statement. I confirm that the investigations were conducted in accord with the ethics policies and integrity standards of Nanyang Technological University and that the research data are presented honestly and without prejudice.}{Mar. 2019}{Styles/signature.png}
+\thesisdeclareSupervisor{I have reviewed the content and presentation style of this thesis and declare it of sufficient grammatical clarity to be examined. To the best of my knowledge, the thesis is free of plagiarism and the research and writing are those of the candidate’s except as acknowledged in the Author Attribution Statement. I confirm that the investigations were conducted in accord with the ethics policies and integrity standards of Nanyang Technological University and that the research data are presented honestly and without prejudice.}{Sep. 2022}{Styles/Signature_NTU.png}
 
 \thesisdeclareAuthorship{Please select one of the following; *delete as appropriate:
 \\
-*(A) This thesis does not contain any materials from papers published in peer-reviewed journals or from papers accepted at conferences in which I am listed as an author.
+*(A) This thesis \textbf{does not} contain any materials from papers published in peer-reviewed journals or from papers accepted at conferences in which I am listed as an author.
 \\
 *(B) This thesis contains material from [x number] paper(s) published in the following peer-reviewed journal(s) / from papers accepted at conferences in which I am listed as an author.}
-{Please amend the typical statements below to suit your circumstances if (B) is selected.
+{
+Please amend the typical statements below to suit your circumstances if (B) is selected.
 
 	Chapter 4 is published as {\color{blue}D.T. Murphy, S. Schmid, J.R. Hester, P.E.R. Blanchard, and W. Miiller.  Coordination site disorder in spinel-type LiMnTiO4.  Inorganic Chemistry 54, 4636-4643 (2015). DOI: 10.1021/ic502747p.}
 
@@ -116,7 +142,24 @@
 		\item IDr U. Hintermair conducted the molecular dynamics simulations.
 		\item IMs. A. Sartbaeva prepared the samples for electron microscopy.
 	\end{itemize}
-}{Mar. 2019}{Styles/signature.png}
+ 
+}{Sep. 2022}{Styles/Signature_NTU.png}
+
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+
+\abstract{\addtocontents{toc}{\vspace{0.8em}}}% Add a gap in the Contents, for aesthetics
+
+% 1. The Problem 2. The Issues 3. The Approach 4. The Results 5. The Experiments 6. The Applications
+
+My abstracts
+
+\cleardoublepage
 
 % ----------------------------------------------------------------------------------------
 % 	ACKNOWLEDGEMENTS
@@ -138,7 +181,7 @@ I wish to express my greatest gratitude to my advisor.
 %----------------------------------------------------------------------------------------
 
 \pagestyle{empty} % No headers or footers for the following pages
-\emph{``If I had one hour to save the world, I would spend 55 minutes defining the problem and only five minutes finding the solution."}
+\emph{"If I had one hour to save the world, I would spend 55 minutes defining the problem and only five minutes finding the solution."}
 
 \begin{flushright}
 ---Einstein, Albert
@@ -156,19 +199,6 @@ I wish to express my greatest gratitude to my advisor.
 \fancyhead[LO]{\sl{\leftmark}}
 \fancyhead[RE]{\sl{\rightmark}}
 \fancyhead[LE,RO]{\thepage}
-
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
-
-\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
-
-\abstract{\addtocontents{toc}{\vspace{0.8em}}}% Add a gap in the Contents, for aesthetics
-
-% 1. The Problem 2. The Issues 3. The Approach 4. The Results 5. The Experiments 6. The Applications
-
-My abstracts
-
 
 
 %----------------------------------------------------------------------------------------
@@ -222,6 +252,7 @@ My abstracts
 \listofnomenclature{ll} % Include a list of Symbols (a three column table)
 {
 \multicolumn{2}{l}{\LARGE{\textbf{Symbols}}}\\[0.618cm]
+$\mathbb{Z}$                       &Integer\\
 $\mathcal{R}^n$                    &the $n$-dimensional Euclidean space\\
 $\mathcal{H}$                      &the Euclidean  space\\
 $\norm{\cdot}$                     &the 2-norm of a vector or matrix in Euclidean space\\
@@ -303,12 +334,13 @@ $a.s.$           & almost sure convergence of a random sequence\\
 % Uncomment the lines as you write the chapters
 
 \input{./Chapters/Chapter1}
-\part{Part Name: Use it when there are many chapters}
+% \part{Part Name: Use it when there are many chapters}
 \input{./Chapters/Chapter2}
 \input{./Chapters/Chapter3}
-\part{Again for Second Part}
+% \part{Again for Second Part}
 \input{./Chapters/Chapter4}
 \input{./Chapters/Chapter5}
+\input{./Chapters/Chapter6}
 
 
 %----------------------------------------------------------------------------------------
@@ -331,29 +363,30 @@ $a.s.$           & almost sure convergence of a random sequence\\
 %	AUTHOR'S PUBLICATIONS
 %----------------------------------------------------------------------------------------
 
+\cleardoublepage
 \authorpublications{
 
 \section*{Awards}
 
 \begin{itemize}
-	\item \textbf{Best Paper Awards}, ``A Great System,'' \emph{Nature}.
+	\item \textbf{Best Paper Awards}, ``A Great Thesis,'' \emph{Nature}.
 \end{itemize}
 
 \section*{Patents}
 \begin{itemize}
-	\item \textbf{A Great System}, ``A Great System,'' \emph{Nature}.
+	\item \textbf{A Great System}, ``A Great Thesis,'' \emph{Nature}.
 \end{itemize}
 
 \section*{Journal Articles}
 
 \begin{itemize}
-    \item \textbf{My name} and My colleague, ``A Great System,'' \emph{Nature}.
+    \item \textbf{My name} and My colleague, ``A Great Thesis,'' \emph{Nature}.
 \end{itemize}
 
 \section*{Conference Proceedings}
 
 \begin{itemize}
-  \item \textbf{My name}, My colleague 1, My colleague 3 and My colleague 3, ``Greater System,'' in \emph{Conference of Vision, 2018}.
+  \item \textbf{My name}, My colleague 1, My colleague 2 and My colleague 3, ``Greater Thesis,'' in \emph{Conference of Vision, 2018}.
 \end{itemize}
 
 }
@@ -367,6 +400,6 @@ $a.s.$           & almost sure convergence of a random sequence\\
 \label{Bibliography}
 \setstretch{1}
 \bibliographystyle{unsrtnat}
-\bibliography{References/first_paper,References/second_paper}
+\bibliography{References/References}
 
 \end{document}
