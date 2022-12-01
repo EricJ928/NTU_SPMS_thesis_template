@@ -7,6 +7,9 @@ This repository is a PhD thesis LaTex template for School of Physical and Mathem
 Thesis title, author name and supervisor name can be changed in Thesis.cls file.
 
 ## Title Page Example
+
+For more detailed examples, check [PhD_thesis__SPMS_template_Example.pdf](https://github.com/EricJ928/NTU_SPMS_thesis_template/blob/master/PhD_thesis__SPMS_template_Example.pdf) in the repo.
+
 Title page:
 ![The title page example](https://github.com/EricJ928/NTU_SPMS_thesis_template/blob/master/Styles/title_page.png)
 
