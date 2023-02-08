@@ -289,7 +289,7 @@
   {\large\bf \the\year}\\[2cm] % Date
   \end{center}
   \end{titlepage}
-  \cleardoublepage
+%   \cleardoublepage
 }
 
 \newcommand\maketitleforreview{
@@ -314,7 +314,8 @@
 			{\large\bf \the\year}\\[2cm] % Date
 		\end{center}
 	\end{titlepage}
-	\cleardoublepage
+% 	\cleardoublepage
+	\clearpage
 }
 
 
@@ -345,7 +346,8 @@
 }
 {
   \vfil\vfil\vfil\null
-  \cleardoublepage
+%   \cleardoublepage
+\clearpage
 }
 
 %----------------------------------------------------------------------------------------
@@ -372,7 +374,8 @@
           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
     \@starttoc{toc}
     \if@restonecol\twocolumn\fi
-  \cleardoublepage
+%   \cleardoublepage
+\clearpage
 }\end{spacing}
 }
 
@@ -391,7 +394,8 @@
               {\MakeUppercase\listfigurename}}
     \@starttoc{lof}
     \if@restonecol\twocolumn\fi
-    \cleardoublepage
+%     \cleardoublepage
+\clearpage
 }\end{spacing}
 }
 
@@ -410,7 +414,8 @@
           \MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
     \@starttoc{lot}
     \if@restonecol\twocolumn\fi
-    \cleardoublepage
+%     \cleardoublepage
+\clearpage
 }\end{spacing}
 }
 \newcommand\listsymbolname{Abbreviations}
@@ -433,7 +438,8 @@
       \@mkboth{
           \MakeUppercase\listconstants}{\MakeUppercase\listconstants}}
 \begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+%     \cleardoublepage
+\clearpage
 }
 \newcommand\listnomenclature{Symbols and Acronyms}
 \usepackage{longtable}
@@ -444,7 +450,8 @@
       \@mkboth{
           \MakeUppercase\listnomenclature}{\MakeUppercase\listnomenclature}}
 \begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+%     \cleardoublepage
+\clearpage
 }
 \newcommand\acknowledgements[1]{
 \btypeout{Acknowledgements}
@@ -454,7 +461,8 @@
 \begin{center}{\flushleft\Huge{\textbf{Acknowledgements}} \par}\end{center}
 {\normalsize #1}
 \vfil\vfil\null
-\cleardoublepage
+% \cleardoublepage
+\clearpage
 }
 
 % NTU Style 3 statements
@@ -475,7 +483,8 @@
 			\makebox[4cm]{Date}    \hfill \makebox[4cm]{\authornames}
 		\end{center}
 	\end{spacing}
-	\cleardoublepage
+% 	\cleardoublepage
+	\clearpage
 }
 
 \newcommand\thesisdeclareSupervisor[3]{
@@ -495,7 +504,8 @@
 			\makebox[4cm]{Date}    \hfill \makebox[4cm]{\supname}
 		\end{center}
 	\end{spacing}
-	\cleardoublepage
+% 	\cleardoublepage
+	\clearpage
 }
 
 \newcommand\thesisdeclareAuthorship[4]{
@@ -518,7 +528,8 @@
 			\makebox[4cm]{Date}    \hfill \makebox[4cm]{\authornames}
 		\end{center}
 	\end{spacing}
-	\cleardoublepage
+% 	\cleardoublepage
+	\clearpage
 }
 
 
@@ -533,7 +544,8 @@
 	\begin{center}{\flushleft\Huge{\textbf{\secname\footnote[1]{The superscript $^*$ indicates joint first authors}}} \par}\end{center}
 	{\normalsize #1}
 	\vfil\vfil\null
-	\cleardoublepage
+% 	\cleardoublepage
+	\clearpage
 }
 
 \newcommand\dedicatory[1]{
